@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>登录示例</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta http-equiv="Expires" content="0">
+   <meta http-equiv="Pragma" content="no-cache">
+   <meta http-equiv="Cache-control" content="no-cache">
+   <meta http-equiv="Cache" content="no-cache">   
+   <link href="../css/login.css" rel="stylesheet" type="text/css" media="all">
+   <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+   <link href="../css/modal.css" rel="stylesheet" type="text/css" media="all">
+   <link href="../css/jcDate.css" rel="stylesheet" type="text/css" media="all">
+   <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="../js/jquery.json-2.4.js"></script>
+   
+   <script type="text/javascript" src="../js/lib/md5.js"></script>
+   <script type="text/javascript" src="../js/lib/jsbn.js"></script>
+   <script type="text/javascript" src="../js/lib/prng4.js"></script>
+   <script type="text/javascript" src="../js/lib/rng.js"></script>
+   <script type="text/javascript" src="../js/lib/rsa.js"></script>
+   <script type="text/javascript" src="../js/login.js"></script>
+
+   <script type="text/javascript" src="../js/art.js"></script>
+   <script type="text/javascript" src="../js/config.js"></script> 
+   <script type="text/javascript" src="../js/ui.js"></script>
+   <script type="text/javascript" src="../js/taskbar.js"></script>   
+   <script type="text/javascript" src="../js/tips.js"></script>
+   <script type="text/javascript" src="../js/jQuery-jcDate.js"></script>
+</head>
+<body>
+	<!--单页面开发模式,只刷新登录页面或资源页面,任务栏加载之后不会再刷新-->
+	<!--content内容用来显示登录页面或者资源页面-->
+	<div id="content"></div>
+	<!--taskbar用来显示任务栏-->
+	<div id="taskbar"></div>
+    <div id="loginmask" style="display:none" >
+        <div class="loading"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	authlogin.mask();
+
+	//调用node-main初始化
+	process.mainModule.exports.initNodemain();
+
+	//检测本地是否配置了VDC地址,获取选路后URL:vdc.conf
+	authlogin.getSelectURL(function(){
+		//获取本地保存的用户数据user.conf
+		authlogin.getuserconf(function(){
+			authlogin.getpolicyconf(function(){
+				$("#content").load('login.html',function(){
+					window.authlogin.init(false);		
+				});
+				$("#taskbar").load('taskbar.html',function(){
+					window.taskbar.init();//获取本地任务栏参数
+				});
+			},function(){
+				$("#content").load('login.html',function(){
+
+					window.authlogin.init(true);
+					var str = '获取策略数据异常，policy.conf配置文件出错了';
+					console.log(str);
+					authlogin.netexception(null);		
+				});
+				$("#taskbar").load('taskbar.html',function(){
+					window.taskbar.init();//获取本地任务栏参数
+				});				
+			});
+			
+		},function(err){//获取用户数据异常流程user.conf
+
+			$("#content").load('login.html',function(){
+
+				window.authlogin.init(true);
+				var str = '获取用户数据异常，user.conf配置文件出错了';
+				console.log(str);
+				authlogin.netexception(null);		
+			});
+			$("#taskbar").load('taskbar.html',function(){
+				window.taskbar.init();//获取本地任务栏参数
+			});
+		});
+
+	},function(err){//选路异常流程vdc.conf
+
+		$("#content").load("login.html",function(){
+			window.authlogin.init(true);
+			var str = '选路异常，vdc.conf配置文件出错了';
+			console.log(str);
+			authlogin.netexception(null);
+		});
+		$("#taskbar").load("taskbar.html",function(){
+			window.taskbar.init();
+		});		
+	});
+});	
+</script>

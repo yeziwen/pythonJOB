@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <script id="rcgrps_tmp" type="text/x-art-template">
+        <ul>
+        {{each groups as grp i}}
+        <li data-grpid="{{grp.id}}" data-bind="switchGroup">{{grp.name}}</li>
+        {{/each}}
+        </ul>
+    </script>
+    <script id="rclist_tmp" type="text/x-art-template">
+        {{each list as rc i}}
+        <dl data-bind="openrc" id="{{rc.id}}" svc="{{rc.svc}}" name="{{rc.name}}" app_path="{{rc.app_path}}">
+        <dt><img src="../imgs/{{rc.img}}"></dt>
+        <dd>
+        <h3>{{rc.name}}</h3>
+        <p>{{rc.description}}</p>
+        </dd>
+        </dl>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <div class="unity-top-panel">
+			<div class="unity-top-inner">
+                <h1>VDI Client</h1>
+                <div id="clock" class="tclock" style="display:none;">12:12</div>
+                <div class="tray-icons">
+                    <dl id="userinfo" class="tmenu">
+                        <dt class="m-title" data-toggle="#top-setting-menu"><span class="top-setting-icon"></span><strong id="username">Administrator</strong><i class="icon-down-dir"></i></dt>
+                        <dd id="top-setting-menu" class="m-menu">
+                            <ul>
+                                <div><li class="m-menu-item" data-bind="person"><span class="m-menu-icon m-menu-pwdicon"></span>修改密码</li></div>
+                                <div><li id="power-menu-logout" class="m-menu-item" data-bind="logout"><span class="m-menu-icon m-menu-logouticon"></span>注销</li></div>
+                            </ul>
+                        </dd>
+                    </dl>
+                    
+                    <dl class="tmenu" style="display:none;">
+                        <dt class="m-title"><i id="connectstatus" class="icon-connection-normal" title="连接正常"></i></dt>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    <div id="mainContainer" class="cards center">
+        <div class="inner">
+            <div id="rcgrps" class="groups">
+
+            </div>
+            <div id="rclist" class="list">
+            </div>
+
+        </div>
+    </div>
+    <div id="mask" style="display:none" >
+        <div class="loading"></div>
+    </div>
+	
+	
+	<!--修改密码框-->
+	<!-- 模态框（Modal） -->
+	<div class="modal" id="modpassModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-bind="passModalClose"></button>
+					<span class="modal-title" id="myModalLabel">修改密码</span>
+				</div>
+				<form class="bs-example bs-example-form" role="form" >
+					<div class="input-group" style="padding-left: 20px; padding-top: 20px;">
+						<span class="input-group-addon" style="width: 75px;">原始密码：</span>
+						<input type="password" class="form-control" id="orgPassword">
+					</div>
+					 
+					<div class="input-group" style="padding-left: 20px; padding-top: 5px; padding-bottom: 5px;">
+						<span class="input-group-addon" style="width: 75px;">新 密 码：</span>
+						<input type="password" class="form-control" id="newPassword">
+					</div>
+					 
+					<div class="input-group" style="padding-left: 20px; padding-bottom: 25px;">
+						<span class="input-group-addon" style="width: 75px;">确认密码：</span>
+						<input type="password" class="form-control" id="confirmPassword">
+					</div>
+				</form>
+				<div class="modal-footer">
+					<button type="button" class="btn" data-bind="confirmModPass">确认</button>
+					<button type="button" class="btn" data-bind="unconfirmModPass">取消</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	
+	<div class="progress-back" id="openrcprogBar">
+		<div class="container">
+			<div class="container-border">
+				<h3>请稍候...</h3>
+				<div class="progress-tip">
+					<span class="m-prog-text">正在获取配置...</span>
+					<span class="m-prog-percent">0%</span>
+				</div>
+				<div class="progress">
+					<span class="green" style="width: 0%;"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal" id="resetVMModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close"></button>
+					<span class="modal-title" id="myModalLabel">提示信息</span>
+				</div>
+				<div class="tip-content">
+					<div class="tip-content-msg">
+						<span id="resetVMTips"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+

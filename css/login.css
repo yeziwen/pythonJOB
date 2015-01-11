@@ -1,0 +1,597 @@
+body{ 
+	min-width: 780px; 
+	min-height: 768px; 
+	font-family:"Microsoft Yahei", Arial, "Simsun", monospace, sans-serif, serif;
+ 	background: #0066cc url(../imgs/wallpaper.jpg) no-repeat center fixed; 
+ 	background-size: cover; 
+ 	position: relative; 
+ 	z-index: 1; 
+}
+.loginbox{
+	width:0;
+	height:0;
+	position:fixed;
+	left:50%;
+	right:50%;
+	top:50%;
+	bottom:50%;
+}
+.inputbox{
+
+  width: 292px;
+  margin-bottom: 10px;
+  display: block;
+  height: 20px;
+  padding: 5px 5px;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 2px;
+
+
+}
+.logo{
+	width: 352px;
+ 	margin: 40px 50px;
+}
+.inputlabel_1{
+	border:none;
+	display: inline-block;
+	width:16px;
+	height: 16px;
+	background-image:url(../imgs/user.png);
+}
+.inputlabel_2{
+	border:none;
+	display: inline-block;
+	width:16px;
+	height: 16px;
+	background-image:url(../imgs/password.png);
+}
+.inputtext{
+  width: 267px;
+  height: 22px;
+  border: none;
+  outline: none;
+  line-height: 17px;
+}
+
+.loginform{
+  width: 302px;
+  height: 250px;
+  margin-left: -151px;
+  margin-top: -205px;
+}
+
+.loginbtn_normal{
+  background: rgba(255,255,255,0);
+  width: 302px;
+  background-image: url('../imgs/loginbtn_normal.png');
+  background-repeat: no-repeat;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  color:#fff;
+  outline:none;
+}
+
+.loginbtn_normal:hover{
+  background: rgba(255,255,255,0);
+  width: 302px;
+  background-image: url('../imgs/loginbtn_hover.png');
+  background-repeat: no-repeat;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  color:#fff;
+  outline:none;
+}
+
+.loginbtn_modify{
+  background: rgba(255,255,255,0);
+  width: 146px;
+  background-image: url('../imgs/modifylogininfobtn.png');
+  background-repeat: no-repeat;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  color:#fff;
+  outline:none;
+}
+
+.loginbtn_modify:hover{
+  background: rgba(255,255,255,0);
+  width: 146px;
+  background-image: url('../imgs/modifylogininfobtn_hover.png');
+  background-repeat: no-repeat;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  color:#fff;
+  outline:none;  
+}
+
+.modifylogininfo{
+  background: rgba(255,255,255,0);
+  width: 146px;
+  background-image: url('../imgs/modifylogininfobtn.png');
+  background-repeat: no-repeat;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  color:#fff;
+  outline:none;
+}
+
+.modifylogininfo:hover{
+  background: rgba(255,255,255,0);
+  width: 146px;
+  background-image: url('../imgs/modifylogininfobtn_hover.png');
+  background-repeat: no-repeat;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  color:#fff;
+  outline:none; 
+}
+
+.ecloginerror{
+  color:red;
+  text-align: center;
+  font-size:13px;
+}
+
+.btn-width:hover{
+	background: rgba(255,255,255,0.3);
+}
+.checkbox{
+	display:inline-block;
+	margin-left:50px;/*修复bootstrp内置checkbox复选框margin-left:-20px*/
+}
+.footer{
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	height:40px;
+	width:100%;
+	border-top:1px solid rgba(123,157,188,1);
+	background: rgba(255,255,255,0);
+}
+.taskbar-left{
+	  margin-top: -16px;
+	  width: 55px;
+	  height: 55px;
+	  float: left;
+	  background-image: url(../imgs/syslogo.png);
+	  background-repeat: no-repeat;
+}
+.taskbar-right{
+	float:right;
+}
+
+.taskbar-menu{
+  position: absolute;
+  margin-top: -86px;
+  margin-left: 2px;
+  z-index: 1;
+  min-width: 90px;
+  padding: 4px 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.taskbar-menuoptions{
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+  	padding: 5px;
+}
+
+.tips-shadow{
+	-webkit-box-shadow: 0 0 10px red;
+}
+.tips-plugin{
+  	border: 1px double #999;
+    background-color: #ffffe8;
+    font-size: 13px;
+    line-height: 25px;
+    color: #000;
+    border-radius:2px;
+    overflow: hidden;
+    position:absolute;
+    z-index:1;
+}
+
+.label_psw{
+  display: inline-block;
+  margin-left: 58px;
+  color:#fff;
+  font-size: 13px;
+}
+
+
+
+.label_autologin{
+  margin-left: 38px;
+  display: inline-block;
+  color:#fff;	
+  font-size: 13px;  
+}
+.checkbox_fix{
+	  margin-right: 5px;
+	  vertical-align:middle;
+}
+
+.systype{
+	display: inline-block;
+	background-image: url('../imgs/type_cn.png');
+	background-repeat: no-repeat;
+	margin-top: 14px;
+	margin-bottom: 14px;
+	margin-right: 16px;
+	width:16px;
+	height: 55px;
+	float: left;
+}
+.systip{
+	display: inline-block;
+	background-image: url('../imgs/systip.png');
+	background-repeat: no-repeat;
+	margin-top: 14px;
+	margin-bottom: 14px;
+	margin-right: 16px;
+	width:16px;
+	height: 55px;
+	float: left;
+}
+.sysnet{
+	display: inline-block;
+	background-image: url('../imgs/sysnet_normal.png');
+	background-repeat: no-repeat;
+	margin-top: 14px;
+	margin-bottom: 14px;
+	margin-right: 16px;
+	width:16px;
+	height: 55px;
+	float: left;
+  position: relative;
+}
+
+
+.netstatus{
+    width:224px;
+    padding:10px 10px;
+    border:1px solid rgb(207,218,157);
+    position:relative;
+    left:-147px;
+    top:-133px;
+    background-color: rgb(207,218,157);
+    border-radius: 3px;
+    font-size:13px;
+    color: rgb(100,96,96);
+    display: none;
+}
+.netstatus_wifi{
+    width:224px;
+    padding:10px 10px;
+    position:relative;
+    font-size:13px;
+    color: rgb(100,96,96);
+}
+.netstatus_wrap{
+    width:246px;
+    border:2px solid #E5E1E1;
+    position:relative;
+    left:-147px;
+    /* top:-378px; */
+    top: -246px;
+    background-color: #FFF;
+    border-radius: 3px;
+    font-size:13px;
+    color: rgb(100,96,96);
+    display: none;  
+}
+.netstatus span.bot{
+    width:0;
+    height:0;
+    font-size:0;
+    overflow:hidden;
+    position:absolute;  
+    border-width:7px; 
+    border-style:solid dashed dashed;
+    border-color:rgb(207,218,157) transparent transparent; 
+    left:148px; 
+    bottom:-13px;
+}
+.netdescript{
+  width: 110px;
+  display: inline-block;
+  text-align: right;
+}
+
+.eth_note{
+  padding: 5px 0px;
+  font-weight: bold;
+  color: black;
+}
+.netdescript_wifi{
+  width: 110px;
+  display: inline-block;
+  text-align: left;
+}
+.wifititile{
+  padding: 3px 10px;
+  border-top: 1px solid rgba(189,184,184,0.75);
+  border-bottom:1px solid rgba(189,184,184,0.75);
+}
+
+.wifi_wrap{
+  width: 246px;
+ /*  height: 165px; */
+  height: 33px;
+  overflow-x: hidden;
+}
+
+.wifisignal{
+  text-align: center;
+  padding:5px 10px;
+}
+/* .wifisignal:hover{
+  background-image:  -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(201,215,234,0.7)), color-stop(1, rgba(27,99,194,0.12)));
+  border-radius: 2px;
+  text-align: center;
+  padding:5px 10px;
+  border-top: 1px solid rgba(193,218,249,1);
+  border-bottom: 1px solid rgba(193,218,249,1);
+} */
+.netwifi_name{
+  display: inline-block;
+  text-align: left;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.netwifi_state{
+  text-align: right;
+  width: 100px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.netwifi-icon-none{
+  background-image: url('../imgs/wifi_none.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block; 
+}
+.netwifi-icon-low{
+  background-image: url('../imgs/wifi_low.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block; 
+}
+.netwifi-icon-lownormal{
+  background-image: url('../imgs/wifi_lownormal.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block; 
+}
+.netwifi-icon-normal{
+  background-image: url('../imgs/wifi_normal.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block; 
+}
+.netwifi-icon-highnormal{
+  background-image: url('../imgs/wifi_highnormal.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block; 
+}
+.netwifi-icon-high{
+  background-image: url('../imgs/wifi_high.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block; 
+}
+.netsetnote{
+  padding: 5px 10px;
+  background-color: rgba(207,217,236,0.2);
+  border-top: 1px solid rgba(128,128,128,0.33);
+  text-align: center;
+  color: rgb(65,134,237);
+  font-size: 13px;
+}
+.netsetnote:hover{
+  padding: 5px 10px;
+  background-image:  -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(201,215,234,0.7)), color-stop(1, rgba(27,99,194,0.12)));
+  border-top: 1px solid rgba(128,128,128,0.33);
+  text-align: center;
+  color: rgb(65,134,237);
+  font-size: 13px;
+}
+.netsetwifi{
+  display: inline-block;  
+}
+
+#netstatefresh{
+  background-image: url('../imgs/refresh.png');
+  width: 16px;
+  height: 16px;
+  float: right;
+}
+
+.netvalue{
+  width: 110px;
+  display: inline-block;
+  text-align: left;  
+}
+
+/*网口状态：正常*/
+.netstateval_ok{
+  color:green;
+}
+/*网口状态：未插入网线*/
+.netstateval_no{
+  color: red;
+}
+
+/*VDI状态：未登录*/
+.vdistateval_nologin{
+  color: rgb(100,96,96);
+}
+/*VDI状态：已登录*/
+.vdistateval_login{
+  color:rgb(100,96,96);
+}
+/*VDI状态：连接中断*/
+.vdistateval_vdcbreak{
+  color: red;
+}
+/*VDI状态：未插入网线*/
+.vdistateval_ethbreak{
+  color:rgb(100,96,96);
+}
+
+#settime{
+  position: relative;
+  top: -69px;
+  width: 140px;
+  left:-67px;
+  border-radius: 2px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 5px;
+  display: none;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);  
+}
+
+#settime:hover{
+  position: relative;
+  top: -69px;
+  width: 140px;
+  left:-67px;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 5px;
+  display: none; 
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.sysvol{
+	display: inline-block;
+	background-image: url('../imgs/sysvol_normal.png');
+	background-repeat: no-repeat;
+	margin-top: 14px;
+	margin-bottom: 14px;
+	margin-right: 16px;
+	width:16px;
+	height: 55px;
+	float: left;	
+}
+.sysclock{
+	display: inline-block;
+	width:80px;
+	height: 55px;
+	float: left;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  margin-top: 5px;
+  margin-right: 6px;
+  position: relative;
+}
+
+#sysmenuoptions{
+	width: 110px;
+  height: 90px;
+  font-size:13px;
+  color: #fff;
+}
+
+
+#sysmenuoptions ul li{
+  padding: 6px 6px;
+}
+#sysmenuoptions ul li:hover{
+
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;  
+}
+
+#menu_1 span{
+  background: url(../imgs/systemset.png) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid rgba(255,255,255,0.5); 
+}
+ #menu_2 span{
+  background: url(../imgs/shutdown.png) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid rgba(255,255,255,0.5); 
+}
+#menu_3 span{
+  background: url(../imgs/reboot.png) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid rgba(255,255,255,0.5); 
+}
+
+.randcode{
+  margin-bottom: 10px;
+  display: none;
+}
+
+#rand_code{
+  border-radius: 2px;
+  text-indent: 7px;
+  width: 100px;
+}
+
+#img1{
+  vertical-align: middle;
+  height: 23px;
+}
+
+#changecode{
+  color:#fff;
+}
+
+.eclogintips{
+  font-size: 13px;
+  text-align: center;
+}
+.eclogininput{
+  padding-top: 6px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.eclogin-modal-dialog{width: 400px; height: 350px; margin: 290px auto; position: relative; background: rgba(255,255,255,0);}

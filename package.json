@@ -1,0 +1,14 @@
+{
+    "name": "vdi_nwjs",
+    "main": "html/index.html",
+    "node-main": "node_main/nodemain.js",
+    "chromium-args":"--ignore-certificate-errors",
+    "window": {
+        "toolbar": true,
+        "fullscreen": false,
+        "always-on-top": false,
+        "show" : true,
+	    "focus" : false
+    }
+}
+  
